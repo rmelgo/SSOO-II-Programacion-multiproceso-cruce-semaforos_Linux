@@ -37,7 +37,23 @@ El proyecto cuenta con los siguientes ficheros:
 - Un fichero llamado ***libcruce.a*** el cual se trata de una biblioteca estática de funciones que contendrá una serie de funciones para gestionar la creación y finalización del cruce así como la gestión del valor de los semáforos creación y movimiento de peatones y coches.
 - Un fichero llamado ***cruce.h*** que contiene las cabeceras de las funciones definidas en la biblioteca *libcruce.a* así como una serie de macros que utiliza la biblioteca.
 
+# - Funciones de la biblioteca estática de funciones ***libcruce.a***
 
+La biblioteca estática de funciones ***libcruce.a*** cuenta con las siguientes funciones:
+
+- **int CRUCE_inicio(int ret, int maxProcs, int semAforos, char * zona)**: Esta función deberá ser ejecutada por el proceso principal despues de crear los mecanismos IPC correspodientes y antes de haber creado algún peatón o coche. Esta función recibe los siguientes parámetros:
+  
+  - **ret**: Número entero que hace referencia a la velocidad de representación de los peatones y coches en el cruce (segundo argumento pasado en la línea de órdenes).
+  - **maxProcs**: Número entero que hace referencia al número máximo de procesos (peatones y coches) que pueden existir de manera simultanea en el cruce (primer argumento pasado en la línea de órdenes).
+  - **semAforos**: Número entero que hace referencia al identificador de un conjunto o array de semáforos que se deberá haber creado previamente donde el primer semáforo será utilizado por la biblioteca y el resto pueden ser utilizados para realizar tareas de sincronización.
+  - **zona**: Puntero a una zona de memoria compartida que se deberá haber creado previamente donde los primeros 256 bytes serán utilizados por la biblioteca mientras el resto pueden ser utilizados para realizar tareas de sincronización.
+ 
+- **int CRUCE_pon_semAforo(int sem, int color)**: Esta función pone el semáforo pasado en el primer parámetro al color indicado en el segundo parámetro. Esta función recibe los siguientes parámetros:
+
+  - **sem**: Número entero que hace referencia a un semáforo del cruce. Este parámetro puede tomar los valores *SEM_P1*, *SEM_P2*, *SEM_C1*, *SEM_C2* dependiendo del semáforo al que se desea cambiar el color.
+  - **color**: Número entero que hace referencia al color al que se desea cambiar el semáforo pasado como primer parámetro. Este parámetro puede tomar los valores *ROJO*, *AMARILLO* (solamente para los semaforos de los coches) y *VERDE*.
+ 
+Nota: *SEM_P1*, *SEM_P2*, *SEM_C1*, *SEM_C2*, *ROJO*, *AMARILLO* y *VERDE* son macros definidas en ***cruce.h***.
 
 # - Pasos necesarios para ejecutar el programa
 
