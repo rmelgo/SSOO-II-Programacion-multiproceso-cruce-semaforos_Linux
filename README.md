@@ -24,7 +24,7 @@ Para poder compilar correctamente el programa, se deberá tener instalada una ve
 
 Para ejecutar el programa es necesario proporcionar 2 argumentos. 
 
-El primer argumento se trata del **número máximo de procesos** (peatones y coches) que pueden existir de manera simultanea en el cruce. Este primer argumento puede tomar valores del ***1 al 40***.
+El primer argumento se trata del **número máximo de procesos** (peatones y coches) que pueden existir de manera simultanea en el cruce. Este primer argumento puede tomar valores del ***3 al 49***, en caso contrario la practica no funcionará.
 
 El segundo argumento hace referencia a la **velocidad** con la que se desplazaran los peatones y los coches. Este argumento podrá tomar valores del ***0 al 40*** de forma que la velocidad del programa será mas rápida cuanto mas pequeño sea el número introducido.  
 Si el segundo argumento es 0, el programa se ejecutará a ***máxima velocidad***, lo que implicará un alto consumo de CPU.
@@ -105,6 +105,14 @@ Para ello se debe introducir el siguiente comando:
 
 ```gcc cruce.c libcruce.a -o cruce```
 
+Como la libreria *libcruce.a* esta diseñada para sistemas de 32 bits y no es posible mezclar código de 64 bits con codigo de 32 bits, será necesario incluir una nueva directiva en el comando gcc para que genere codigo en 32 bits compatible con la biblioteca. De esta manera, el comando necesario para compilar el programa es el siguiente:
+
+```gcc -m32 cruce.c libcruce.a -o cruce```
+
+Si se produce algún tipo de error al realizar la compilación será por que el sistema donde se ejecuta el programa no tiene las librerias de 32 bits necesarias. Para incluirlas se deberá ejecutar el siguyiente comando:
+
+```sudo apt-get install gcc-multilib```
+
 Tras ejecutar este comando, se generará un fichero ejecutable llamado *cruce*. Observese como es necesario tanto el fichero *cruce.c* como la biblioteca estática de funciones *libcruce.a* para generar el ejecutable.
 
 **Paso 2: Ejecutar el programa**  
@@ -122,3 +130,5 @@ Para finalizar la ejecución del programa simplemente bastara con pulsar las tec
 # - Ejemplo de ejecución
 
 En la siguiente imagen, se muestra un ejemplo del uso y funcionamiento del programa:    
+
+
