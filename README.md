@@ -55,6 +55,17 @@ La biblioteca estática de funciones ***libcruce.a*** cuenta con las siguientes 
  
 Nota: *SEM_P1*, *SEM_P2*, *SEM_C1*, *SEM_C2*, *ROJO*, *AMARILLO* y *VERDE* son macros definidas en ***cruce.h***.
 
+- **int CRUCE_nuevo_proceso(void)**: Esta función crea un nuevo proceso que puede ser un coche o un peatón. Esta función devuelve *COCHE* en el caso de que el proceso creado se trate de un coche y *PEAToN* en el caso de que el proceso creado se trate de un peatón.
+
+Nota: *COCHE* y *PEAToN* son macros definidas en ***cruce.h***.
+
+- **struct posiciOn CRUCE_inicio_coche(void)**: Cada vez que se crea un nuevo proceso de tipo *COCHE*, debe llamar a esta función. Esta función devuelve las coordenadas de la posición siguiente que ocupará el coche a través de un tipo de datos llamado *posiciOn*.
+
+Nota: *posiciOn* es un tipo de datos definido en ***cruce.h*** y cuenta con dos enteros que hacen referencia a la coordenada x y a la coordenada y.
+
+- **struct posiciOn CRUCE_inicio_peatOn_ext(struct posiciOn *posNacimiento)**: Cada vez que se crea un nuevo proceso de tipo *PEAToN*, debe llamar a esta función. Esta función devuelve las coordenadas de la posición siguiente que ocupará el peatón a través de un tipo de datos llamado *posiciOn*. Esta función cuenta con un único parámetro en el cual se devolverá por referencia la posición actual que ocupa el peatón a través de un tipo de datos llamado *posiciOn*.
+
+  
 # - Pasos necesarios para ejecutar el programa
 
 **Paso 1: Compilar el programa**  
