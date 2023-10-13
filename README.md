@@ -65,6 +65,21 @@ Nota: *posiciOn* es un tipo de datos definido en ***cruce.h*** y cuenta con dos 
 
 - **struct posiciOn CRUCE_inicio_peatOn_ext(struct posiciOn *posNacimiento)**: Cada vez que se crea un nuevo proceso de tipo *PEAToN*, debe llamar a esta función. Esta función devuelve las coordenadas de la posición siguiente que ocupará el peatón a través de un tipo de datos llamado *posiciOn*. Esta función cuenta con un único parámetro en el cual se devolverá por referencia la posición actual que ocupa el peatón a través de un tipo de datos llamado *posiciOn*.
 
+- **struct posiciOn CRUCE_avanzar_coche(struct posiciOn sgte)**: Esta función debe ser llamada por cada coche despues de haber ejecutado ***CRUCE_inicio_coche***. Esta función recibe como parámetro la posición a la que desea ir el coche y devuelve la nueva posición siguiente que ocupará el coche.
+
+- **struct posiciOn CRUCE_avanzar_peatOn(struct posiciOn sgte)**: Esta función debe ser llamada por cada peatón despues de haber ejecutado ***CRUCE_inicio_peatOn_ext***. Esta función recibe como parámetro la posición a la que desea ir el peatón y devuelve la nueva posición siguiente que ocupará el peatón.
+
+- **int pausa_coche(void)**: Esta función debe ser llamada por cada coche cada vez que se haya producido un avance mediante la función ***CRUCE_avanzar_coche***.
+
+- **int pausa(void)**: Esta función debe ser llamada por cada peatón cada vez que se haya producido un avance mediante la función ***CRUCE_avanzar_peatOn***.
+
+- **int CRUCE_fin_coche(void)**: Cuando un coche tenga en la posición siguiente un valor negativo para la coordenada y, deberá llamar a esta función para finalizar el proceso coche de manera correcta.
+
+- **int CRUCE_fin_peatOn(void)**: Cuando un peatón tenga en la posición siguiente un valor negativo para la coordenada y, deberá llamar a esta función para finalizar el proceso peatón de manera correcta.
+
+- **int CRUCE_fin(void)**: Cuando la ejecución del cruce haya finalizado, el proceso principal debe ejecutar esta función. Esta función se encargará de finalziar la representación del cruce y limpiar todos los procesos y mecanismos IPC que estuvieran en uso.
+
+- **void pon_error(char *mensaje)**: Esta función coloca el mensaje pasado como parámetro en un recuadro y espera a que el usuario pulse Intro para seguir con la ejecución del programa.
   
 # - Pasos necesarios para ejecutar el programa
 
