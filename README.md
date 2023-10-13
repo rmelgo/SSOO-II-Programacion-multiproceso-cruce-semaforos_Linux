@@ -1,4 +1,4 @@
-# Simulación del tráfico de un cruce mediante programación concurrente
+# Simulación del tráfico de un cruce mediante programación concurrente en el entorno UNIX
 
 ![cruce](https://github.com/rmelgo/SSOO-II-Programacion-multiproceso-cruce-semaforos/assets/145989723/f9c4ab82-5e85-4717-b436-1fd395f90f66)
 
@@ -115,5 +115,10 @@ Para ello se debe introducir el siguiente comando:
 
 Tras ejecutar este comando, el programa se habra ejecutado correctamente, siempre y cuendo se hayan introducido los argumentos correspondientes.
 
+**Finalización del programa**
+
+Para finalizar la ejecución del programa simplemente bastara con pulsar las teclas CTRL+C desde el terminal. De esta manera, el programa automaticamente recibira una señal de terminación por lo que realizará las tareas necsarias para finalizar el cruce y liberar todos los reccursos utilizados.
+
 # - Ejemplo de ejecución
 
+En la siguiente imagen, se muestra un ejemplo del uso y funcionamiento del programa:    
