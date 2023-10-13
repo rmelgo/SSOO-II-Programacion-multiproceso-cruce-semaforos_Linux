@@ -129,6 +129,14 @@ Para finalizar la ejecución del programa simplemente bastara con pulsar las tec
 
 # - Ejemplo de ejecución
 
-En la siguiente imagen, se muestra un ejemplo del uso y funcionamiento del programa:    
+## Ejecución a velocidad media (10) y máximo de 4 procesos
 
+En la siguiente imagen, se muestra un ejemplo del uso y funcionamiento del programa con un límite de 4 procesos y una velocidad de 10:    
 
+![Ejemplo ejecucion 1](https://github.com/rmelgo/SSOO-II-Programacion-multiproceso-cruce-semaforos/assets/145989723/a72bece7-157e-4224-93f6-48f9a7595866)
+
+## Ejecución a velocidad máxima y máximo de 49 procesos
+
+En la siguiente imagen, se muestra un ejemplo del uso y funcionamiento del programa con un límite de 49 procesos y una velocidad de 0:    
+
+![Ejemplo ejecucion 2](https://github.com/rmelgo/SSOO-II-Programacion-multiproceso-cruce-semaforos/assets/145989723/cbe17750-07ad-44d2-91ac-cbf5288b5e08)
