@@ -1,4 +1,4 @@
-# Simulación del tráfico de un cruce mediante programacion concurrente
+# Simulación del tráfico de un cruce mediante programación concurrente
 
 # - Introducción
 
@@ -6,8 +6,9 @@ Proyecto realizado en la asignatura de SSOO II del grado de Ingenieria Informát
 
 http://avellano.usal.es/~labssoo/pract209.htm
   
-El principal objetivo de este proyecto es la realización de un programa en C que simule el tráfico de coches y peatones en un cruce donde cada peaton y coche será simulado por un proceso. 
-De esta manera, el objetivo es establecer una correcta sincronización y comunicación entre los distintos procesos para que se cumplan las nromas de tráfico en el cruce.
+El principal objetivo de este proyecto es la realización de un programa en C que simule el tráfico de coches y peatones en un cruce donde cada peatón y cada coche será simulado por un proceso.
+De esta manera, el objetivo es establecer una correcta sincronización y comunicación entre los distintos procesos para que se cumplan las normas de tráfico en el cruce.
+Para ello, se utilizarán distintos mecanismos IPC de comunicación entre procesos como los semáforos, los buzones o la memoria compartida.
 
 # - Comentarios sobre el entorno de ejecución
 
@@ -17,21 +18,14 @@ Para poder compilar correctamente el programa, se deberá tener instalada una ve
 
 ```sudo apt install gcc```
 
-# - Modos de ejecución
-
-Existen 2 modos de funcionamiento:
-
-En el modo de funcionamiento ***normal***, los procesos entran y salen directamente en la sección crítica sin realizar ningún tipo de espera. Tampoco se imprime por pantalla el PID del proceso que entra/sale de la sección crítica.
-
-En el modo de funcionamiento de ***depuración***, los procesos entran y salen de la sección crítica realizando pequeñas pausas. En este caso, los procesos que entran/salen de la sección crítica imprimen su PID.
-
 # - Parámetros de ejecución
 
 Para ejecutar el programa es necesario proporcionar 2 argumentos. 
 
-El primer argumento se trata de un número entero comprendido entre 3 y 33, el cual hace referencia al número de procesos que participan en la práctica.
+El primer argumento se trata del **número máximo de procesos** (peatones y coches) que pueden existir de manera simultanea en el cruce. Este primer argumento puede tomar valores del ***1 al 40***.
 
-El segundo argumento es opcional. Si el segundo argumento es la palabra debug, el programa se ejecuta en modo de ***depuración***. Si el segundo parametro viene vacio, el programa se ejecuta en modo ***normal***.
+El segundo argumento hace referencia a la **velocidad** con la que se desplazaran los peatones y los coches. Este argumento podrá tomar valores del ***0 al 40*** de forma que la velocidad del programa será mas rápida cuanto mas pequeño sea el número introducido.  
+Si el segundo argumento es 0, el programa se ejecutará a ***máxima velocidad***, lo que implicará un alto consumo de CPU.
 
 Si los parámetros introducidos no respetan las reglas anteriores, el programa lo detectará, informará al usuario y acabará.
 
