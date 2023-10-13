@@ -91,9 +91,9 @@ Como se puede observar en la siguiente imagen, el cruce cuenta con 4 semáforos,
 
 De esta manera, el ciclo semafórico del cruce estará compuesto por 3 fases:
 
-- **Fase 1**: El semáforo C1 y P2 se encontrarán en verde mientras que el resto de semáforos se encontrarán en rojo. La duración de esta fase será de 6 pausas (una pausa equivale a una llamada a la funcion *pausa*).
-- **Fase 2**: El semáforo C2 se encontrará en verde mientras que el resto de semáforos se encontrarán en rojo. La duración de esta fase será de 8 pausas.
-- **Fase 3**: El semáforo P1 se encontrará en verde mientras que el resto de semáforos se encontrarán en rojo. La duración de esta fase será de 12 pausas.
+- **Fase 1**: El semáforo *C1* y *P2* se encontrarán en verde mientras que el resto de semáforos se encontrarán en rojo. La duración de esta fase será de *6 pausas* (una pausa equivale a una llamada a la funcion *pausa*).
+- **Fase 2**: El semáforo *C2* se encontrará en verde mientras que el resto de semáforos se encontrarán en rojo. La duración de esta fase será de *8 pausas*.
+- **Fase 3**: El semáforo *P1* se encontrará en verde mientras que el resto de semáforos se encontrarán en rojo. La duración de esta fase será de *12 pausas*.
 
 Para cambiar de una fase a otra, existirá una pequeña fase de transición donde el color de los semáforos de los coches se encontrará en amarillo. Esta fase de transición durará en principio 2 pausas aunque esta fase puede extenderse hasta que los cruces se encuentren libres para así evitar posibles colisiones entre peatones y coches. 
   
@@ -103,15 +103,15 @@ Para cambiar de una fase a otra, existirá una pequeña fase de transición dond
 
 Para ello se debe introducir el siguiente comando:    
 
-```gcc lallevas.c -o lallevas```
+```gcc cruce.c libcruce.a -o cruce```
 
-Tras ejecutar este comando, se generará un fichero ejecutable llamado *lallevas*
+Tras ejecutar este comando, se generará un fichero ejecutable llamado *cruce*. Observese como es necesario tanto el fichero *cruce.c* como la biblioteca estática de funciones *libcruce.a* para generar el ejecutable.
 
 **Paso 2: Ejecutar el programa**  
 
-Para ello se debe introducir el siguente comando:    
+Para ello se debe introducir el siguiente comando:    
 
-```./lallevas 6```
+```./cruce <número-máximo-procesos> <velocidad>```
 
 Tras ejecutar este comando, el programa se habra ejecutado correctamente, siempre y cuendo se hayan introducido los argumentos correspondientes.
 
