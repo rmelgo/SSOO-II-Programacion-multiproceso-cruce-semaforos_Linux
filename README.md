@@ -1,5 +1,7 @@
 # Simulación del tráfico de un cruce mediante programación concurrente
 
+![cruce](https://github.com/rmelgo/SSOO-II-Programacion-multiproceso-cruce-semaforos/assets/145989723/f9c4ab82-5e85-4717-b436-1fd395f90f66)
+
 # - Introducción
 
 Proyecto realizado en la asignatura de SSOO II del grado de Ingenieria Informática de la Universidad de Salamanca. El enunciado del proyecto se encuentra en el siguiente enlace:  
@@ -80,6 +82,20 @@ Nota: *posiciOn* es un tipo de datos definido en ***cruce.h*** y cuenta con dos 
 - **int CRUCE_fin(void)**: Cuando la ejecución del cruce haya finalizado, el proceso principal debe ejecutar esta función. Esta función se encargará de finalziar la representación del cruce y limpiar todos los procesos y mecanismos IPC que estuvieran en uso.
 
 - **void pon_error(char *mensaje)**: Esta función coloca el mensaje pasado como parámetro en un recuadro y espera a que el usuario pulse Intro para seguir con la ejecución del programa.
+
+# - Ciclo semafórico
+
+Como se puede observar en la siguiente imagen, el cruce cuenta con 4 semáforos, 2 para coches y 2 para peatones.
+
+![esquemacruce](https://github.com/rmelgo/SSOO-II-Programacion-multiproceso-cruce-semaforos/assets/145989723/75191847-4f28-4036-8468-459646b98f73)
+
+De esta manera, el ciclo semafórico del cruce estará compuesto por 3 fases:
+
+- **Fase 1**: El semáforo C1 y P2 se encontrarán en verde mientras que el resto de semáforos se encontrarán en rojo. La duración de esta fase será de 6 pausas (una pausa equivale a una llamada a la funcion *pausa*).
+- **Fase 2**: El semáforo C2 se encontrará en verde mientras que el resto de semáforos se encontrarán en rojo. La duración de esta fase será de 8 pausas.
+- **Fase 3**: El semáforo P1 se encontrará en verde mientras que el resto de semáforos se encontrarán en rojo. La duración de esta fase será de 12 pausas.
+
+Para cambiar de una fase a otra, existirá una pequeña fase de transición donde el color de los semáforos de los coches se encontrará en amarillo. Esta fase de transición durará en principio 2 pausas aunque esta fase puede extenderse hasta que los cruces se encuentren libres para así evitar posibles colisiones entre peatones y coches. 
   
 # - Pasos necesarios para ejecutar el programa
 
@@ -100,3 +116,4 @@ Para ello se debe introducir el siguente comando:
 Tras ejecutar este comando, el programa se habra ejecutado correctamente, siempre y cuendo se hayan introducido los argumentos correspondientes.
 
 # - Ejemplo de ejecución
+
