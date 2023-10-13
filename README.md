@@ -29,6 +29,16 @@ Si el segundo argumento es 0, el programa se ejecutará a ***máxima velocidad**
 
 Si los parámetros introducidos no respetan las reglas anteriores, el programa lo detectará, informará al usuario y acabará.
 
+# Comentarios sobre el mateial adjuntado
+
+El proyecto cuenta con los siguientes ficheros:
+
+- Un fichero llamado ***cruce.c*** que contendrá el código necesario para poner en marcha la infraestructura del cruce, leer y interpretar los argumentos introducidos y crear los peatones y coches correspondientes.
+- Un fichero llamado ***libcruce.a*** el cual se trata de una biblioteca estática de funciones que contendrá una serie de funciones para gestionar la creación y finalización del cruce así como la gestión del valor de los semáforos creación y movimiento de peatones y coches.
+- Un fichero llamado ***cruce.h*** que contiene las cabeceras de las funciones definidas en la biblioteca *libcruce.a* así como una serie de macros que utiliza la biblioteca.
+
+
+
 # - Pasos necesarios para ejecutar el programa
 
 **Paso 1: Compilar el programa**  
