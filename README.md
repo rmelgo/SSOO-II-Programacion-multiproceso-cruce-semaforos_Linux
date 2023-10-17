@@ -125,7 +125,7 @@ Tras ejecutar este comando, el programa se habra ejecutado correctamente, siempr
 
 **Finalización del programa**
 
-Para finalizar la ejecución del programa simplemente bastara con pulsar las teclas CTRL+C desde el terminal. De esta manera, el programa automaticamente recibira una señal de terminación por lo que realizará las tareas necsarias para finalizar el cruce y liberar todos los reccursos utilizados.
+Para finalizar la ejecución del programa simplemente bastara con pulsar las teclas CTRL+C desde el terminal. De esta manera, el programa automaticamente recibira una señal de terminación por lo que realizará las tareas necsarias para finalizar el cruce y liberar todos los recursos utilizados.
 
 # - Ejemplo de ejecución
 
