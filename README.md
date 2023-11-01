@@ -4,7 +4,7 @@
 
 # - Introducción
 
-Proyecto realizado en la asignatura de SSOO II del grado de Ingenieria Informática de la Universidad de Salamanca. El enunciado del proyecto se encuentra en el siguiente enlace:  
+Proyecto realizado en la asignatura de ***SSOO II*** del grado de Ingenieria Informática de la Universidad de Salamanca. El enunciado del proyecto se encuentra en el siguiente enlace:  
 
 http://avellano.usal.es/~labssoo/pract209.htm
   
@@ -14,15 +14,15 @@ Para ello, se utilizarán distintos mecanismos IPC de comunicación entre proces
 
 # - Comentarios sobre el entorno de ejecución
 
-Para ejecutar este programa, se requerira de una distribución del Sistema Operativo **GNU/Linux**.    
+Para ejecutar este programa, se requerirá de una distribución del Sistema Operativo **GNU/Linux**.    
 
-Para poder compilar correctamente el programa, se deberá tener instalada una version del compilador gcc o similar. En el caso de no tener gcc, se puede instalar facilmente con el siguiente comando:
+Para poder compilar correctamente el programa, se deberá tener instalada una versión del compilador gcc o similar. En el caso de no tener gcc, se puede instalar fácilmente con el siguiente comando:
 
 ```sudo apt install gcc```
 
 # - Parámetros de ejecución
 
-Para ejecutar el programa es necesario proporcionar 2 argumentos. 
+Para ejecutar el programa, es necesario proporcionar 2 argumentos. 
 
 El primer argumento se trata del **número máximo de procesos** (peatones y coches) que pueden existir de manera simultanea en el cruce. Este primer argumento puede tomar valores del ***3 al 49***, en caso contrario la practica no funcionará.
 
@@ -36,7 +36,7 @@ Si los parámetros introducidos no respetan las reglas anteriores, el programa l
 El proyecto cuenta con los siguientes ficheros:
 
 - Un fichero llamado ***cruce.c*** que contendrá el código necesario para poner en marcha la infraestructura del cruce, leer y interpretar los argumentos introducidos y crear los peatones y coches correspondientes.
-- Un fichero llamado ***libcruce.a*** el cual se trata de una biblioteca estática de funciones que contendrá una serie de funciones para gestionar la creación y finalización del cruce así como la gestión del valor de los semáforos creación y movimiento de peatones y coches.
+- Un fichero llamado ***libcruce.a*** el cual se trata de una biblioteca estática de funciones que contendrá una serie de funciones para gestionar la creación y finalización del cruce así como la gestión del valor de los semáforos, creación y movimiento de peatones y coches.
 - Un fichero llamado ***cruce.h*** que contiene las cabeceras de las funciones definidas en la biblioteca *libcruce.a* así como una serie de macros que utiliza la biblioteca.
 
 # - Funciones de la biblioteca estática de funciones ***libcruce.a***
@@ -53,7 +53,7 @@ La biblioteca estática de funciones ***libcruce.a*** cuenta con las siguientes 
 - **int CRUCE_pon_semAforo(int sem, int color)**: Esta función pone el semáforo pasado en el primer parámetro al color indicado en el segundo parámetro. Esta función recibe los siguientes parámetros:
 
   - **sem**: Número entero que hace referencia a un semáforo del cruce. Este parámetro puede tomar los valores *SEM_P1*, *SEM_P2*, *SEM_C1*, *SEM_C2* dependiendo del semáforo al que se desea cambiar el color.
-  - **color**: Número entero que hace referencia al color al que se desea cambiar el semáforo pasado como primer parámetro. Este parámetro puede tomar los valores *ROJO*, *AMARILLO* (solamente para los semaforos de los coches) y *VERDE*.
+  - **color**: Número entero que hace referencia al color al que se desea cambiar el semáforo pasado como primer parámetro. Este parámetro puede tomar los valores *ROJO*, *AMARILLO* (solamente para los semáforos de los coches) y *VERDE*.
  
 Nota: *SEM_P1*, *SEM_P2*, *SEM_C1*, *SEM_C2*, *ROJO*, *AMARILLO* y *VERDE* son macros definidas en ***cruce.h***.
 
@@ -81,7 +81,7 @@ Nota: *posiciOn* es un tipo de datos definido en ***cruce.h*** y cuenta con dos 
 
 - **int CRUCE_fin(void)**: Cuando la ejecución del cruce haya finalizado, el proceso principal debe ejecutar esta función. Esta función se encargará de finalziar la representación del cruce y limpiar todos los procesos y mecanismos IPC que estuvieran en uso.
 
-- **void pon_error(char *mensaje)**: Esta función coloca el mensaje pasado como parámetro en un recuadro y espera a que el usuario pulse Intro para seguir con la ejecución del programa.
+- **void pon_error(char *mensaje)**: Esta función coloca el mensaje pasado como parámetro en un recuadro y espera a que el usuario pulse *Intro* para seguir con la ejecución del programa.
 
 # - Ciclo semafórico
 
@@ -101,15 +101,15 @@ Para cambiar de una fase a otra, existirá una pequeña fase de transición dond
 
 **Paso 1: Compilar el programa**  
 
-Para ello se debe introducir el siguiente comando:    
+Para ello, se debe introducir el siguiente comando:    
 
 ```gcc cruce.c libcruce.a -o cruce```
 
-Como la libreria *libcruce.a* esta diseñada para sistemas de 32 bits y no es posible mezclar código de 64 bits con codigo de 32 bits, será necesario incluir una nueva directiva en el comando gcc para que genere codigo en 32 bits compatible con la biblioteca. De esta manera, el comando necesario para compilar el programa es el siguiente:
+Como la libreria *libcruce.a* esta diseñada para sistemas de 32 bits y no es posible mezclar código de 64 bits con código de 32 bits, será necesario incluir una nueva directiva en el comando gcc para que genere codigo en 32 bits compatible con la biblioteca. De esta manera, el comando necesario para compilar el programa es el siguiente:
 
 ```gcc -m32 cruce.c libcruce.a -o cruce```
 
-Si se produce algún tipo de error al realizar la compilación será por que el sistema donde se ejecuta el programa no tiene las librerias de 32 bits necesarias. Para incluirlas se deberá ejecutar el siguyiente comando:
+Si se produce algún tipo de error al realizar la compilación, será por que el sistema donde se ejecuta el programa no tiene las librerias de 32 bits necesarias. Para incluirlas, se deberá ejecutar el siguiente comando:
 
 ```sudo apt-get install gcc-multilib```
 
@@ -121,11 +121,11 @@ Para ello se debe introducir el siguiente comando:
 
 ```./cruce <número-máximo-procesos> <velocidad>```
 
-Tras ejecutar este comando, el programa se habra ejecutado correctamente, siempre y cuendo se hayan introducido los argumentos correspondientes.
+Tras ejecutar este comando, el programa se habra ejecutado correctamente, siempre y cuando se hayan introducido los argumentos correspondientes.
 
 **Finalización del programa**
 
-Para finalizar la ejecución del programa simplemente bastara con pulsar las teclas CTRL+C desde el terminal. De esta manera, el programa automaticamente recibira una señal de terminación por lo que realizará las tareas necsarias para finalizar el cruce y liberar todos los recursos utilizados.
+Para finalizar la ejecución del programa simplemente bastara con pulsar las teclas *CTRL+C* desde el terminal. De esta manera, el programa automáticamente recibira una señal de terminación por lo que realizará las tareas necesarias para finalizar el cruce y liberar todos los recursos utilizados.
 
 # - Ejemplo de ejecución
 
@@ -140,3 +140,10 @@ En la siguiente imagen, se muestra un ejemplo del uso y funcionamiento del progr
 En la siguiente imagen, se muestra un ejemplo del uso y funcionamiento del programa con un límite de 49 procesos y una velocidad de 0:    
 
 ![Ejemplo ejecucion 2](https://github.com/rmelgo/SSOO-II-Programacion-multiproceso-cruce-semaforos/assets/145989723/cbe17750-07ad-44d2-91ac-cbf5288b5e08)
+
+# - Participantes
+
+<table>
+  <td align="center"><a href="https://github.com/rmelgo"><img src="https://avatars.githubusercontent.com/u/145989723?s=400&u=e5c06adba3f3c418207178abc845d398b3d5f77f&v=4" width="100px;" alt=""/><br /><sub><b>Raúl Melgosa</b></sub></a><br/> 
+  <td align="center"><img src="https://avatars.githubusercontent.com/u/84237179?v=4" width="100px;" alt=""/><br /><sub><b>Juan Carlos Velasco</b></sub></a><br/> 
+</table>
