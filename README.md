@@ -67,9 +67,9 @@ Nota: *posiciOn* es un tipo de datos definido en ***cruce.h*** y cuenta con dos 
 
 - **struct posiciOn CRUCE_inicio_peatOn_ext(struct posiciOn *posNacimiento)**: Cada vez que se crea un nuevo proceso de tipo *PEAToN*, debe llamar a esta función. Esta función devuelve las coordenadas de la posición siguiente que ocupará el peatón a través de un tipo de datos llamado *posiciOn*. Esta función cuenta con un único parámetro en el cual se devolverá por referencia la posición actual que ocupa el peatón a través de un tipo de datos llamado *posiciOn*.
 
-- **struct posiciOn CRUCE_avanzar_coche(struct posiciOn sgte)**: Esta función debe ser llamada por cada coche despues de haber ejecutado ***CRUCE_inicio_coche***. Esta función recibe como parámetro la posición a la que desea ir el coche y devuelve la nueva posición siguiente que ocupará el coche.
+- **struct posiciOn CRUCE_avanzar_coche(struct posiciOn sgte)**: Esta función debe ser llamada por cada coche después de haber ejecutado ***CRUCE_inicio_coche***. Esta función recibe como parámetro la posición a la que desea ir el coche y devuelve la nueva posición siguiente que ocupará el coche.
 
-- **struct posiciOn CRUCE_avanzar_peatOn(struct posiciOn sgte)**: Esta función debe ser llamada por cada peatón despues de haber ejecutado ***CRUCE_inicio_peatOn_ext***. Esta función recibe como parámetro la posición a la que desea ir el peatón y devuelve la nueva posición siguiente que ocupará el peatón.
+- **struct posiciOn CRUCE_avanzar_peatOn(struct posiciOn sgte)**: Esta función debe ser llamada por cada peatón después de haber ejecutado ***CRUCE_inicio_peatOn_ext***. Esta función recibe como parámetro la posición a la que desea ir el peatón y devuelve la nueva posición siguiente que ocupará el peatón.
 
 - **int pausa_coche(void)**: Esta función debe ser llamada por cada coche cada vez que se haya producido un avance mediante la función ***CRUCE_avanzar_coche***.
 
