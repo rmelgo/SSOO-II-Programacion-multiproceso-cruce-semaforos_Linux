@@ -79,7 +79,7 @@ Nota: *posiciOn* es un tipo de datos definido en ***cruce.h*** y cuenta con dos 
 
 - **int CRUCE_fin_peatOn(void)**: Cuando un peatón tenga en la posición siguiente un valor negativo para la coordenada y, deberá llamar a esta función para finalizar el proceso peatón de manera correcta.
 
-- **int CRUCE_fin(void)**: Cuando la ejecución del cruce haya finalizado, el proceso principal debe ejecutar esta función. Esta función se encargará de finalziar la representación del cruce y limpiar todos los procesos y mecanismos IPC que estuvieran en uso.
+- **int CRUCE_fin(void)**: Cuando la ejecución del cruce haya finalizado, el proceso principal debe ejecutar esta función. Esta función se encargará de finalizar la representación del cruce y limpiar todos los procesos y mecanismos IPC que estuvieran en uso.
 
 - **void pon_error(char *mensaje)**: Esta función coloca el mensaje pasado como parámetro en un recuadro y espera a que el usuario pulse *Intro* para seguir con la ejecución del programa.
 
@@ -91,7 +91,7 @@ Como se puede observar en la siguiente imagen, el cruce cuenta con 4 semáforos,
 
 De esta manera, el ciclo semafórico del cruce estará compuesto por 3 fases:
 
-- **Fase 1**: El semáforo *C1* y *P2* se encontrarán en verde mientras que el resto de semáforos se encontrarán en rojo. La duración de esta fase será de *6 pausas* (una pausa equivale a una llamada a la funcion *pausa*).
+- **Fase 1**: El semáforo *C1* y *P2* se encontrarán en verde mientras que el resto de semáforos se encontrarán en rojo. La duración de esta fase será de *6 pausas* (una pausa equivale a una llamada a la función *pausa*).
 - **Fase 2**: El semáforo *C2* se encontrará en verde mientras que el resto de semáforos se encontrarán en rojo. La duración de esta fase será de *8 pausas*.
 - **Fase 3**: El semáforo *P1* se encontrará en verde mientras que el resto de semáforos se encontrarán en rojo. La duración de esta fase será de *12 pausas*.
 
@@ -125,7 +125,7 @@ Tras ejecutar este comando, el programa se habra ejecutado correctamente, siempr
 
 **Finalización del programa**
 
-Para finalizar la ejecución del programa simplemente bastara con pulsar las teclas *CTRL+C* desde el terminal. De esta manera, el programa automáticamente recibira una señal de terminación por lo que realizará las tareas necesarias para finalizar el cruce y liberar todos los recursos utilizados.
+Para finalizar la ejecución del programa simplemente bastara con pulsar las teclas *CTRL+C* desde el terminal. De esta manera, el programa automáticamente recibirá una señal de terminación por lo que realizará las tareas necesarias para finalizar el cruce y liberar todos los recursos utilizados.
 
 # - Ejemplo de ejecución
 
