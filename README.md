@@ -24,7 +24,7 @@ Para poder compilar correctamente el programa, se deberá tener instalada una ve
 
 Para ejecutar el programa, es necesario proporcionar 2 argumentos. 
 
-El primer argumento se trata del **número máximo de procesos** (peatones y coches) que pueden existir de manera simultanea en el cruce. Este primer argumento puede tomar valores del ***3 al 49***, en caso contrario la practica no funcionará.
+El primer argumento se trata del **número máximo de procesos** (peatones y coches) que pueden existir de manera simultanea en el cruce. Este primer argumento puede tomar valores del ***3 al 49***, en caso contrario la práctica no funcionará.
 
 El segundo argumento hace referencia a la **velocidad** con la que se desplazaran los peatones y los coches. Este argumento podrá tomar valores del ***0 al 40*** de forma que la velocidad del programa será mas rápida cuanto mas pequeño sea el número introducido.  
 Si el segundo argumento es 0, el programa se ejecutará a ***máxima velocidad***, lo que implicará un alto consumo de CPU.
@@ -43,7 +43,7 @@ El proyecto cuenta con los siguientes ficheros:
 
 La biblioteca estática de funciones ***libcruce.a*** cuenta con las siguientes funciones:
 
-- **int CRUCE_inicio(int ret, int maxProcs, int semAforos, char * zona)**: Esta función deberá ser ejecutada por el proceso principal despues de crear los mecanismos IPC correspodientes y antes de haber creado algún peatón o coche. Esta función recibe los siguientes parámetros:
+- **int CRUCE_inicio(int ret, int maxProcs, int semAforos, char * zona)**: Esta función deberá ser ejecutada por el proceso principal despues de crear los mecanismos IPC correspondientes y antes de haber creado algún peatón o coche. Esta función recibe los siguientes parámetros:
   
   - **ret**: Número entero que hace referencia a la velocidad de representación de los peatones y coches en el cruce (segundo argumento pasado en la línea de órdenes).
   - **maxProcs**: Número entero que hace referencia al número máximo de procesos (peatones y coches) que pueden existir de manera simultanea en el cruce (primer argumento pasado en la línea de órdenes).
